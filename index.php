@@ -150,9 +150,9 @@ $formResult = handleContactForm();
                 <p class="text-xl text-gray-600 mb-8">
                     Professional Nail Care & Beauty Services
                 </p>
-                <a href="#add_booking" class="bg-pink-400 text-white px-8 py-3 rounded-full hover:bg-pink-500 transition duration-300 inline-block">
+                <button href="add_booking.php" class="bg-pink-400 text-white px-8 py-3 rounded-full hover:bg-pink-500 transition duration-300 inline-block">
                     Book Now
-                </a>
+                </button>
             </div>
         </div>
     </section>

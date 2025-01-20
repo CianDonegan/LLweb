@@ -41,6 +41,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo "Booking confirmed!";
 }
 
+// Add to backend.php
+function validateBooking($data) {
+    $errors = [];
+    if (empty($data['client_name'])) {
+        $errors[] = "Name is required";
+    }
+    if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "Valid email is required";
+    }
+    // Add more validation as needed
+    return $errors;
+}
+
+$stmt = $conn->prepare("INSERT INTO bookings (client_name, email, phone, service_id, date, time) VALUES (?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("ssssss", $client_name, $email, $phone, $service_id, $date, $time);
 
 ?>
 
