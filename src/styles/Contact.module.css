@@ -1,0 +1,246 @@
+.contact {
+  margin-top: 64px;
+  background: var(--white);
+  color: var(--text-dark);
+}
+
+.hero {
+  background: linear-gradient(45deg, var(--primary-dark), var(--primary));
+  color: var(--white);
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  font-family: var(--font-primary);
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  opacity: 0.9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.contactSection {
+  background: var(--accent);
+  padding: 4rem 0;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 4rem;
+}
+
+.formContainer {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px var(--shadow);
+}
+
+.formContainer h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--text-dark);
+  font-family: var(--font-primary);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup label {
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.formGroup input,
+.formGroup textarea,
+.formGroup select {
+  padding: 0.75rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  font-family: var(--font-secondary);
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus,
+.formGroup select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.submitButton {
+  padding: 1rem 2rem;
+  background: linear-gradient(45deg, var(--primary-dark), var(--primary));
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submitButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(219, 112, 147, 0.2);
+}
+
+.contactInfo {
+  padding: 2.5rem;
+}
+
+.contactInfo h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--text-dark);
+  font-family: var(--font-primary);
+}
+
+.infoGrid {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.infoCard {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.infoCard:hover {
+  transform: translateY(-5px);
+}
+
+.infoIcon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.infoCard h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+  font-family: var(--font-primary);
+}
+
+.infoCard p {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.hours {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px var(--shadow);
+}
+
+.hours h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+  font-family: var(--font-primary);
+}
+
+.hours ul {
+  list-style: none;
+  padding: 0;
+}
+
+.hours li {
+  color: var(--text-light);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(219, 112, 147, 0.1);
+}
+
+.hours li:last-child {
+  border-bottom: none;
+}
+
+.mapSection {
+  background: var(--white);
+  padding: 4rem 0;
+}
+
+.mapSection h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--text-dark);
+  font-family: var(--font-primary);
+}
+
+.mapPlaceholder {
+  width: 100%;
+  height: 400px;
+  background: var(--accent);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px var(--shadow);
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  font-size: 1.2rem;
+}
+
+@media (max-width: 1024px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+  }
+
+  .container {
+    padding: 3rem 1.5rem;
+  }
+
+  .formContainer,
+  .contactInfo {
+    padding: 1.5rem;
+  }
+} 

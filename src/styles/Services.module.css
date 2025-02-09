@@ -1,0 +1,235 @@
+:root {
+  /* Color Palette */
+  --primary: #DB7093;       /* Dark Pink */
+  --primary-light: #FFB6C1; /* Light Pink */
+  --primary-dark: #C71585;  /* Deep Pink */
+  --accent: #FFF0F5;        /* Lavender Blush */
+  --text-dark: #1E1919;     /* Almost Black */
+  --text-light: #666666;    /* Soft Gray */
+  --white: #FFFFFF;
+  --shadow: rgba(0, 0, 0, 0.08);
+}
+
+.services {
+  margin-top: 64px;
+  background: var(--white);
+  color: var(--text-dark);
+}
+
+.hero {
+  background: linear-gradient(45deg, var(--primary-dark), var(--primary));
+  color: var(--white);
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  opacity: 0.9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.serviceCards {
+  background: #fff;
+  padding: 4rem 0;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.card {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px var(--shadow);
+  text-align: center;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid rgba(219, 112, 147, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(219, 112, 147, 0.15);
+}
+
+.cardIcon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #1e1919;
+}
+
+.price {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif; /* Elegant font for prices */
+}
+
+.card p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.bookButton {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  background: linear-gradient(45deg, var(--primary-dark), var(--primary));
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  width: 100%;
+}
+
+.bookButton:hover {
+  background: linear-gradient(45deg, var(--primary), var(--primary-dark));
+  transform: translateY(-2px);
+}
+
+.additionalServices {
+  background: #f8f9fa;
+  padding: 4rem 0;
+}
+
+.additionalServices h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #1e1919;
+}
+
+.addonsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.addonCard {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px var(--shadow);
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(219, 112, 147, 0.1);
+}
+
+.addonCard:hover {
+  transform: translateY(-5px);
+}
+
+.addonIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #FFB6C1;
+}
+
+.addonCard h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #1e1919;
+}
+
+.addonPrice {
+  font-size: 1.8rem;
+  color: var(--primary);
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+}
+
+.note {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  margin-top: 2rem;
+}
+
+.cta {
+  background: linear-gradient(45deg, var(--primary-dark), var(--primary));
+  color: var(--white);
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.cta p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.ctaButton {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  background: var(--white);
+  color: var(--primary);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1024px) {
+  .cardsGrid,
+  .addonsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+  }
+
+  .cardsGrid,
+  .addonsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 3rem 1.5rem;
+  }
+} 

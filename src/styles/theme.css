@@ -1,0 +1,26 @@
+:root {
+  /* Color Palette */
+  --primary: #DB7093;       /* Dark Pink */
+  --primary-light: #FFB6C1; /* Light Pink */
+  --primary-dark: #C71585;  /* Deep Pink */
+  --accent: #FFF0F5;        /* Lavender Blush */
+  --text-dark: #1E1919;     /* Almost Black */
+  --text-light: #666666;    /* Soft Gray */
+  --white: #FFFFFF;
+  --shadow: rgba(0, 0, 0, 0.08);
+
+  /* Typography */
+  --font-primary: 'Playfair Display', serif;
+  --font-secondary: -apple-system, system-ui, sans-serif;
+}
+
+/* Common styles */
+.gradient-bg {
+  background: linear-gradient(45deg, var(--primary-dark), var(--primary));
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, var(--primary-dark), var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+} 

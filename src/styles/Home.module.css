@@ -1,1 +1,232 @@
- 
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(45deg, var(--primary-dark), var(--primary));
+  color: var(--white);
+  padding: 2rem;
+  margin-top: 64px;
+}
+
+.heroContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.heroText {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 4.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  font-family: var(--font-primary);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.primaryButton {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.secondaryButton {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--white);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.primaryButton:hover,
+.secondaryButton:hover {
+  transform: translateY(-2px);
+}
+
+.heroImage {
+  flex: 1;
+  max-width: 600px;
+}
+
+.heroImage img {
+  width: 100%;
+  height: auto;
+}
+
+.features {
+  padding: 6rem 2rem;
+  background: var(--accent);
+}
+
+.featureContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featureTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  font-family: var(--font-primary);
+  color: var(--text-dark);
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.featureCard {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 20px var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+}
+
+.featureIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+
+.featureCard h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+  font-family: var(--font-primary);
+}
+
+.featureCard p {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.cta {
+  background: linear-gradient(45deg, var(--primary-dark), var(--primary));
+  color: var(--white);
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-primary);
+}
+
+.cta p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.ctaButton {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  background: var(--white);
+  color: var(--primary);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.trustedBy {
+  padding: 4rem 2rem;
+  background: white;
+}
+
+.trustedByContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.trustedByTitle {
+  font-size: 1.5rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.logoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .heroContent {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ctaButtons {
+    justify-content: center;
+  }
+
+  .featureGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaButtons {
+    flex-direction: column;
+  }
+} 
