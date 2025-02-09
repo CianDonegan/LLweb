@@ -1,54 +1,50 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styles from '../styles/About.module.css';
 
 const About = () => {
-  const teamMembers = [
+  const achievements = [
     {
-      name: 'John Doe',
-      role: 'CEO & Founder',
-      image: 'https://i.pravatar.cc/200?img=1',
-      bio: 'Visionary leader with 15+ years of experience.',
+      number: '5+',
+      title: 'Years Experience',
+      description: 'Dedicated to nail artistry'
     },
     {
-      name: 'Jane Smith',
-      role: 'CTO',
-      image: 'https://i.pravatar.cc/200?img=2',
-      bio: 'Tech innovator and software architect.',
+      number: '1000+',
+      title: 'Happy Clients',
+      description: 'Satisfied customers served'
     },
     {
-      name: 'Mike Johnson',
-      role: 'Head of Design',
-      image: 'https://i.pravatar.cc/200?img=3',
-      bio: 'Award-winning designer and UX expert.',
-    },
+      number: '50+',
+      title: 'Nail Designs',
+      description: 'Unique styles mastered'
+    }
   ];
 
-  const values = [
+  const qualifications = [
     {
-      title: 'Quality',
-      description: 'Using premium products and techniques for the best results.',
-      icon: '✨'
+      year: '2023',
+      title: 'Advanced Nail Art Certification',
+      institution: 'International Nail Academy'
     },
     {
-      title: 'Hygiene',
-      description: 'Maintaining the highest standards of cleanliness and safety.',
-      icon: '🧼'
+      year: '2022',
+      title: 'Gel Extension Specialist',
+      institution: 'Professional Beauty Institute'
     },
     {
-      title: 'Service',
-      description: 'Providing a luxurious and comfortable experience.',
-      icon: '👑'
+      year: '2021',
+      title: 'Nail Technology Diploma',
+      institution: 'Dublin Beauty Academy'
     }
   ];
 
   return (
-    <div className={styles.about}>
+    <div className={styles.aboutPage}>
       <section className={styles.hero}>
         <div className={styles.heroContent}>
-          <h1 className={styles.title}>About LaylaLawlor Beauty</h1>
+          <h1>About Me</h1>
           <p className={styles.subtitle}>
-            Creating beautiful nails and confident smiles since 2020
+            Passionate about creating beautiful nails and exceptional experiences
           </p>
         </div>
       </section>
@@ -56,69 +52,80 @@ const About = () => {
       <section className={styles.story}>
         <div className={styles.container}>
           <div className={styles.storyContent}>
-            <h2>Our Story</h2>
-            <p>
-              LaylaLawlor Beauty was founded with a passion for nail artistry and a
-              commitment to excellence. With years of experience and dedication to
-              the craft, we've built a reputation for providing exceptional nail
-              care services in Dublin.
-            </p>
-            <p>
-              Our mission is to enhance your natural beauty and boost your
-              confidence through professional nail care services. We believe in
-              creating a relaxing environment where you can unwind while receiving
-              top-quality treatments.
-            </p>
+            <div className={styles.textContent}>
+              <h2>My Journey</h2>
+              <p>
+                Welcome to LaylaLawlor Beauty! I'm Layla, a professional nail technician with over 5 years
+                of experience in creating stunning nail designs. My passion for nail artistry began
+                when I realized how a beautiful set of nails could boost someone's confidence and
+                brighten their day.
+              </p>
+              <p>
+                I specialize in gel extensions, artistic designs, and creating personalized experiences
+                for each of my clients. My goal is to not just meet but exceed your expectations,
+                ensuring you leave my studio feeling confident and beautiful.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.achievements}>
+        <div className={styles.container}>
+          <div className={styles.achievementsGrid}>
+            {achievements.map((achievement, index) => (
+              <div key={index} className={styles.achievementCard}>
+                <div className={styles.number}>{achievement.number}</div>
+                <h3>{achievement.title}</h3>
+                <p>{achievement.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.qualifications}>
+        <div className={styles.container}>
+          <h2>Professional Journey</h2>
+          <div className={styles.timeline}>
+            {qualifications.map((qual, index) => (
+              <div key={index} className={styles.timelineItem}>
+                <div className={styles.timelineContent}>
+                  <span className={styles.year}>{qual.year}</span>
+                  <h3>{qual.title}</h3>
+                  <p>{qual.institution}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       <section className={styles.values}>
         <div className={styles.container}>
-          <h2>Our Values</h2>
+          <h2>My Values</h2>
           <div className={styles.valuesGrid}>
-            {values.map((value, index) => (
-              <div key={index} className={styles.valueCard}>
-                <div className={styles.valueIcon}>{value.icon}</div>
-                <h3>{value.title}</h3>
-                <p>{value.description}</p>
-              </div>
-            ))}
+            <div className={styles.valueCard}>
+              <h3>Quality</h3>
+              <p>Using only premium products and techniques for lasting results</p>
+            </div>
+            <div className={styles.valueCard}>
+              <h3>Hygiene</h3>
+              <p>Maintaining the highest standards of cleanliness and sterilization</p>
+            </div>
+            <div className={styles.valueCard}>
+              <h3>Creativity</h3>
+              <p>Bringing your vision to life with artistic flair and attention to detail</p>
+            </div>
           </div>
         </div>
       </section>
 
       <section className={styles.cta}>
         <div className={styles.container}>
-          <h2>Experience the Difference</h2>
-          <p>Join our growing family of satisfied clients</p>
-          <Link to="/contact">
-            <button className={styles.ctaButton}>Book Now</button>
-          </Link>
-        </div>
-      </section>
-
-      <section className={styles.team}>
-        <div className={styles.container}>
-          <h2>Meet Our Team</h2>
-          <div className={styles.teamGrid}>
-            {teamMembers.map((member, index) => (
-              <div key={index} className={styles.teamCard}>
-                <div className={styles.memberImage}>
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    onError={(e) => {
-                      e.target.src = '/images/placeholder-avatar.png';
-                    }}
-                  />
-                </div>
-                <h3>{member.name}</h3>
-                <h4>{member.role}</h4>
-                <p>{member.bio}</p>
-              </div>
-            ))}
-          </div>
+          <h2>Ready to Experience Professional Nail Care?</h2>
+          <p>Book your appointment today and let's create something beautiful together</p>
+          <button className={styles.ctaButton}>Book Now</button>
         </div>
       </section>
     </div>

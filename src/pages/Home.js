@@ -69,11 +69,11 @@ const Home = () => {
               <span className={styles.titleHighlight}>Crafted with Care</span>
             </h1>
             <p className={styles.subtitle}>
-              Dublin's Award-Winning Nail Studio | Organic Products | Luxury Experience
+              Dublin Nail Studio | Organic Products | Luxury Experience
             </p>
             <div className={styles.ctaButtons}>
-              <Link to="/contact">
-                <button className={styles.primaryButton}>
+              <Link to="/booking">
+                <button className={styles.primaryButton}>                                                               
                   Book Consultation ➔
                 </button>
               </Link>
@@ -111,7 +111,7 @@ const Home = () => {
             Limited Availability - Book Your Slot Now
           </p>
           <div className={styles.ctaButtons}>
-            <Link to="/contact">
+            <Link to="/booking">
               <button className={styles.ctaButton}>
                 📅 Book Appointment
               </button>

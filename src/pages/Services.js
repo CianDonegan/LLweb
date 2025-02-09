@@ -1,44 +1,43 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styles from '../styles/Services.module.css';
 
 const Services = () => {
   const services = [
     {
-      title: 'Gel Polish',
+      icon: '💅',
+      name: 'Gel Polish',
       price: '€30',
-      description: 'inc. detailed cuticle work, natural nail manicure, gel polish application, cuticle oil.',
-      icon: '💅'
+      description: 'inc. detailed cuticle work, natural nail manicure, gel polish application, cuticle oil'
     },
     {
-      title: 'Builder Gel/biab',
+      icon: '✨',
+      name: 'Builder Gel hiab',
       price: '€35',
-      description: 'inc. detailed cuticle work, natural nail manicure, builder gel application, file and shape, cuticle oil.',
-      icon: '✨'
+      description: 'inc. detailed cuticle work, natural nail manicure, builder gel application, file and shape, cuticle oil'
     },
     {
-      title: 'Acrylic Extensions',
+      icon: '💎',
+      name: 'Acrylic Extensions',
       price: '€40',
-      description: 'inc. detailed cuticle work, natural nail manicure, acrylic application, file and shape, cuticle oil.',
-      icon: '💎'
+      description: 'inc. detailed cuticle work, natural nail manicure, acrylic application, file and shape, cuticle oil'
     },
     {
-      title: 'Gel Polish on Toes',
+      icon: '👣',
+      name: 'Gel Polish on Toes',
       price: '€25',
-      description: 'inc. foot soak, detailed cuticle work, natural nail manicure, gel polish application, cuticle oil.',
-      icon: '👣'
+      description: 'inc. foot soak, detailed cuticle work, natural nail manicure, gel polish application, cuticle oil'
     },
     {
-      title: 'Full Pedicure',
+      icon: '🦶',
+      name: 'Full Pedicure',
       price: '€40',
-      description: 'inc. foot soak, detailed cuticle work, hard skin removal, natural nail manicure, gel polish application, foot massage.',
-      icon: '🦶'
+      description: 'inc. foot soak, detailed cuticle work, hard skin removal, natural nail manicure, gel polish application, foot massage'
     },
     {
-      title: 'Deluxe Pedicure',
+      icon: '✨',
+      name: 'Deluxe Pedicure',
       price: '€45',
-      description: 'inc. foot soak, detailed cuticle work, callus removal treatment, natural nail manicure, gel polish application, foot massage.',
-      icon: '✨'
+      description: 'inc. foot soak, detailed cuticle work, callus removal treatment, natural nail manicure, gel polish application, foot massage'
     }
   ];
 
@@ -61,33 +60,23 @@ const Services = () => {
   ];
 
   return (
-    <div className={styles.services}>
-      <section className={styles.hero}>
-        <div className={styles.heroContent}>
-          <h1 className={styles.title}>Our Services</h1>
-          <p className={styles.subtitle}>
-            Professional Nail Care Services by Layla Lawlor Beauty
-          </p>
-        </div>
-      </section>
-
-      <section className={styles.serviceCards}>
-        <div className={styles.container}>
-          <div className={styles.cardsGrid}>
-            {services.map((service, index) => (
-              <div key={index} className={styles.card}>
-                <div className={styles.cardIcon}>{service.icon}</div>
-                <h3>{service.title}</h3>
-                <div className={styles.price}>{service.price}</div>
-                <p>{service.description}</p>
-                <Link to="/contact">
-                  <button className={styles.bookButton}>Book Now</button>
-                </Link>
-              </div>
-            ))}
+    <div className={styles.servicesPage}>
+      <div className={styles.header}>
+        <h1>My Services</h1>
+        <p>Professional Nail Care Services by Layla Lawlor Beauty</p>
+      </div>
+      
+      <div className={styles.servicesGrid}>
+        {services.map((service, index) => (
+          <div key={index} className={styles.serviceCard}>
+            <div className={styles.serviceIcon}>{service.icon}</div>
+            <h2>{service.name}</h2>
+            <div className={styles.price}>{service.price}</div>
+            <p className={styles.description}>{service.description}</p>
+            <button className={styles.bookButton}>Book Now</button>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
 
       <section className={styles.additionalServices}>
         <div className={styles.container}>
@@ -111,9 +100,7 @@ const Services = () => {
         <div className={styles.container}>
           <h2>Ready to book your appointment?</h2>
           <p>Experience professional nail care services</p>
-          <Link to="/contact">
-            <button className={styles.ctaButton}>Book Now</button>
-          </Link>
+          <button className={styles.ctaButton}>Book Now</button>
         </div>
       </section>
     </div>
