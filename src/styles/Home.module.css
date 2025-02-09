@@ -1,9 +1,8 @@
 .hero {
-  min-height: 90vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(45deg, var(--primary-dark), var(--primary));
-  color: var(--white);
+  color: white;
   padding: 2rem;
   margin-top: 64px;
 }
@@ -48,9 +47,20 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-weight: 600;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.primaryButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(var(--primary-rgb), 0.4);
+}
+
+.primaryButton:active {
+  transform: translateY(-1px);
 }
 
 .secondaryButton {
@@ -61,13 +71,20 @@
   border: 2px solid var(--white);
   border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-weight: 600;
+  position: relative;
+  overflow: hidden;
 }
 
-.primaryButton:hover,
 .secondaryButton:hover {
-  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+}
+
+.secondaryButton:active {
+  transform: translateY(-1px);
 }
 
 .heroImage {
@@ -101,8 +118,21 @@
 
 .featureGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
+  padding: 2rem 0;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .featureCard {
@@ -111,17 +141,23 @@
   border-radius: 12px;
   text-align: center;
   box-shadow: 0 8px 20px var(--shadow);
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
 }
 
 .featureCard:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
 .featureIcon {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  color: var(--primary);
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.featureCard:hover .featureIcon {
+  animation: float 2s ease-in-out infinite;
 }
 
 .featureCard h3 {
@@ -134,6 +170,14 @@
 .featureCard p {
   color: var(--text-light);
   line-height: 1.6;
+}
+
+.featureDescription {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 280px;
+  margin: 0 auto;
 }
 
 .cta {
@@ -160,22 +204,33 @@
   opacity: 0.9;
 }
 
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(var(--primary-rgb), 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(var(--primary-rgb), 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(var(--primary-rgb), 0);
+  }
+}
+
 .ctaButton {
-  padding: 1rem 2.5rem;
+  padding: 15px 40px;
   font-size: 1.1rem;
-  background: var(--white);
-  color: var(--primary);
+  background: var(--primary);
+  color: var(--white);
   border: none;
-  border-radius: 8px;
+  border-radius: 30px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 600;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: pulse 2s infinite;
 }
 
 .ctaButton:hover {
-  transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-3px) scale(1.05);
+  background: var(--primary-dark);
 }
 
 .trustedBy {
@@ -200,6 +255,49 @@
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 2rem;
   align-items: center;
+}
+
+.titleHighlight {
+  color: #ffd7e5;
+  font-weight: 300;
+  display: block;
+  font-size: 1.8rem;
+  margin-top: 0.5rem;
+}
+
+.ctaSection {
+  background: #f9f3f7;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.ctaContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.ctaText {
+  color: #555;
+  margin: 1.5rem 0;
+  font-size: 1.1rem;
+}
+
+.phoneLink {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #4a4a4a;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 1rem;
+}
+
+.phoneLink:hover {
+  background: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 1024px) {
@@ -229,4 +327,15 @@
   .ctaButtons {
     flex-direction: column;
   }
+}
+
+.fadeIn {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
 } 
