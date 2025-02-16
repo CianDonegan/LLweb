@@ -24,7 +24,7 @@ function App() {
         <Route path="/portfolio" element={<><Navbar /><Portfolio /></>} />
         <Route path="/contact" element={<><Navbar /><Contact /></>} />
         <Route path="/booking" element={<><Navbar /><Booking /></>} />
-        <Route path="/booking/confirmation" element={<><Navbar /><BookingConfirmation /></>} />
+        <Route path="/booking/confirmation" element={<BookingConfirmation />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route 
           path="/admin/*" 

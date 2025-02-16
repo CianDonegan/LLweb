@@ -130,10 +130,12 @@
 
 /* Add these new styles */
 .message {
-  padding: 1rem;
-  border-radius: 8px;
-  margin-bottom: 2rem;
-  text-align: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  color: #666;
+  margin-top: 5px;
 }
 
 .success {
@@ -195,6 +197,7 @@
   padding: 2rem;
   border-radius: 12px;
   text-align: left;
+  margin-top: 2rem;
 }
 
 .confirmationNumber {
@@ -211,8 +214,14 @@
   margin-bottom: 2rem;
 }
 
+.bookingDetails h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
 .bookingDetails p {
   margin: 0.5rem 0;
+  color: var(--text-dark);
 }
 
 .confirmationMessage {
@@ -239,4 +248,32 @@
 
 .homeButton:hover {
   background: var(--primary-dark);
+}
+
+.error {
+  color: #d32f2f;
+  margin-top: 5px;
+  font-size: 0.875rem;
+}
+
+.errorInput {
+  border-color: #d32f2f !important;
+  background-color: #fff8f8;
+}
+
+.errorMessage {
+  color: #d32f2f;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.formGroup input:focus.errorInput,
+.formGroup select:focus.errorInput {
+  box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.1);
+}
+
+.helperText {
+  color: #666;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
 } 
